@@ -12,7 +12,7 @@ This repository contains two shell scripts for managing ZFS snapshots on an OPNs
 The `zfs_daily_snapshot.sh` is designed to be run daily via cron. You can either do this through the preferred method of adding a service to [configd, more info here](https://docs.opnsense.org/development/backend/configd.html). Or you can add it to crontab directly.
 
 ## Restore
-The `zfs_RESTORE.sh` script allows you to roll back all datasets in the pool to a specific daily snapshot by date.
+The `zfs_RESTORE.sh` script allows you to roll back all datasets in the pool to a specific daily snapshot by date. This should be run from the device directly booted into single user mode to avoid live changes. If you cannot boot into single user mode, boot from an OPNsense installer USB drive or other ZFS capable OS and restore manually from there.
 
 ### Usage
 Run the script with the desired snapshot date as an argument:
